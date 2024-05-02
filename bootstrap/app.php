@@ -14,6 +14,9 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         // $middleware->append(\App\Http\Middleware\Authenticate::class);
         $middleware->append(\App\Http\Middleware\RedirectIfAuthenticated::class);
+        $middleware->alias([
+            'admin' => \App\Http\Middleware\IsAdmin::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

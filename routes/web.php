@@ -43,4 +43,4 @@ Route::get('/dashboard/blogs/checkSlug', [DashboardBlogsController::class, 'chec
 Route::resource('/dashboard/blogs', DashboardBlogsController::class)->middleware('auth');
 
 Route::get('/dashboard/categories/checkSlug', [AdminCategoryController::class, 'checkSlug']);
-Route::resource('/dashboard/categories', AdminCategoryController::class)->middleware('auth');
+Route::resource('/dashboard/categories', AdminCategoryController::class)->middleware('admin');
